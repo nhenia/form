@@ -22,6 +22,8 @@
         h1 {
             text-align: center;
             color: #333;
+            font-weight: bold; /* This will make the headline bold */
+            font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif; /* A font stack that is similar to Graphik */
         }
         .form-group {
             margin-bottom: 15px;
@@ -36,19 +38,32 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; /* Ensures padding doesn't affect the width */
+            box-sizing: border-box;
         }
         select[multiple] {
-            height: 150px; /* Adjust height for visibility of multiple options */
+            height: 150px;
         }
         textarea {
-            resize: vertical; /* Allows user to resize the textarea vertically */
-            max-height: 200px; /* Optional: Sets a max height */
+            resize: vertical;
+            max-height: 200px;
         }
         .char-count {
             text-align: right;
             font-size: 0.8em;
             color: #777;
+        }
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+        .radio-group input {
+            width: auto;
+            margin-right: 10px;
         }
         .button-container {
             text-align: center;
@@ -71,40 +86,94 @@
 
 <div class="container">
     <h1>Submit a Form</h1>
-<p>this is my text box uwuw great</p>
+
     <form action="mailto:your_email@example.com" method="post" enctype="text/plain">
         
         <div class="form-group">
-            <label for="choices">Select up to 3 choices:</label>
-            <select name="Choices" id="choices" multiple size="5" required>
-                <option value="Item 1">Item 1</option>
-                <option value="Item 2">Item 2</option>
-                <option value="Item 3">Item 3</option>
-                <option value="Item 4">Item 4</option>
-                <option value="Item 5">Item 5</option>
-                <option value="Item 6">Item 6</option>
-                <option value="Item 7">Item 7</option>
-                <option value="Item 8">Item 8</option>
-                <option value="Item 9">Item 9</option>
-                <option value="Item 10">Item 10</option>
-                <option value="Item 11">Item 11</option>
-                <option value="Item 12">Item 12</option>
-                <option value="Item 13">Item 13</option>
-                <option value="Item 14">Item 14</option>
-                <option value="Item 15">Item 15</option>
-                <option value="Item 16">Item 16</option>
-                <option value="Item 17">Item 17</option>
-                <option value="Item 18">Item 18</option>
-                <option value="Item 19">Item 19</option>
-                <option value="Item 20">Item 20</option>
-                <option value="Item 21">Item 21</option>
-                <option value="Item 22">Item 22</option>
+            <label for="choices_1">Select up to 3 choices (Menu 1):</label>
+            <select name="Choices 1" id="choices_1" multiple size="5" required>
+                <option value="Item 1-1">Item 1</option>
+                <option value="Item 1-2">Item 2</option>
+                <option value="Item 1-3">Item 3</option>
+                <option value="Item 1-4">Item 4</option>
+                <option value="Item 1-5">Item 5</option>
+                <option value="Item 1-6">Item 6</option>
+                <option value="Item 1-7">Item 7</option>
+                <option value="Item 1-8">Item 8</option>
+                <option value="Item 1-9">Item 9</option>
+                <option value="Item 1-10">Item 10</option>
+                <option value="Item 1-11">Item 11</option>
+                <option value="Item 1-12">Item 12</option>
+                <option value="Item 1-13">Item 13</option>
+                <option value="Item 1-14">Item 14</option>
+                <option value="Item 1-15">Item 15</option>
+                <option value="Item 1-16">Item 16</option>
+                <option value="Item 1-17">Item 17</option>
+                <option value="Item 1-18">Item 18</option>
+                <option value="Item 1-19">Item 19</option>
+                <option value="Item 1-20">Item 20</option>
+                <option value="Item 1-21">Item 21</option>
+                <option value="Item 1-22">Item 22</option>
             </select>
         </div>
 
         <div class="form-group">
-            <label for="contact_email">Your Email:</label>
-            <input type="text" id="contact_email" name="Contact Email" required>
+            <label for="choices_2">Select up to 3 choices (Menu 2):</label>
+            <select name="Choices 2" id="choices_2" multiple size="5" required>
+                <option value="Item 2-1">Item 1</option>
+                <option value="Item 2-2">Item 2</option>
+                <option value="Item 2-3">Item 3</option>
+                <option value="Item 2-4">Item 4</option>
+                <option value="Item 2-5">Item 5</option>
+                <option value="Item 2-6">Item 6</option>
+                <option value="Item 2-7">Item 7</option>
+                <option value="Item 2-8">Item 8</option>
+                <option value="Item 2-9">Item 9</option>
+                <option value="Item 2-10">Item 10</option>
+                <option value="Item 2-11">Item 11</option>
+                <option value="Item 2-12">Item 12</option>
+                <option value="Item 2-13">Item 13</option>
+                <option value="Item 2-14">Item 14</option>
+                <option value="Item 2-15">Item 15</option>
+                <option value="Item 2-16">Item 16</option>
+                <option value="Item 2-17">Item 17</option>
+                <option value="Item 2-18">Item 18</option>
+                <option value="Item 2-19">Item 19</option>
+                <option value="Item 2-20">Item 20</option>
+                <option value="Item 2-21">Item 21</option>
+                <option value="Item 2-22">Item 22</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Choose one option:</label>
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="Single_Choice" value="Option A" required>
+                    Option A
+                </label>
+                <label>
+                    <input type="radio" name="Single_Choice" value="Option B">
+                    Option B
+                </label>
+                <label>
+                    <input type="radio" name="Single_Choice" value="Option C">
+                    Option C
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="user_name">Your Name:</label>
+            <input type="text" id="user_name" name="User Name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="user_contact">Your Contact Information:</label>
+            <p>
+                Please provide your contact information, such as an **email**, **phone number**, or **Instagram/Facebook handle**.
+            </p>
+            <input type="text" id="user_contact" name="User Contact" required>
         </div>
 
         <div class="form-group">
